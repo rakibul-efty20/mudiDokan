@@ -15,11 +15,16 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="categoryNavList">
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="categoryNavList">
         <li class="nav-item"><a class="nav-link" href="products.html">All products</a></li>
         <li class="nav-item d-none" id="dashboardNavItem"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
         <li class="nav-item d-none" id="adminNavItem"><a class="nav-link" href="admin.html">Admin</a></li>
-        <!-- category links injected here by navbar.js -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categories</a>
+          <ul class="dropdown-menu" id="categoryDropdownMenu">
+            <!-- populated by navbar.js -->
+          </ul>
+        </li>
       </ul>
 
       <form class="d-flex me-3" role="search" id="navSearchForm">

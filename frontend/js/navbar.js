@@ -59,18 +59,17 @@ function wireSearch() {
 }
 
 async function loadCategoryLinks() {
-  const list = document.getElementById("categoryNavList");
+  const menu = document.getElementById("categoryDropdownMenu");
   try {
     const categories = await apiFetch("/categories");
     categories.forEach((cat) => {
       const li = document.createElement("li");
-      li.className = "nav-item";
       const a = document.createElement("a");
-      a.className = "nav-link";
+      a.className = "dropdown-item";
       a.href = `products.html?category=${encodeURIComponent(cat.slug)}`;
       a.textContent = cat.name;
       li.appendChild(a);
-      list.appendChild(li);
+      menu.appendChild(li);
     });
   } catch {
     // Catalog endpoint unreachable — nav still works, just without category
