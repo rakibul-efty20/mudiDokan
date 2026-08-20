@@ -1,0 +1,140 @@
+/* Brand palette layered onto Bootstrap 5.3's theme variables. Same accent
+   family as the rest of the portfolio series, applied through Bootstrap's
+   own CSS custom properties rather than fighting them with !important. */
+
+:root,
+[data-bs-theme="light"] {
+  --bs-primary: #0e6c7c;
+  --bs-primary-rgb: 14, 108, 124;
+  --bs-link-color: #0e6c7c;
+  --bs-link-hover-color: #0a4f5a;
+  --bs-body-bg: #f7f9fb;
+  --brand-accent: #0e6c7c;
+  --brand-accent-soft: #e4f2f3;
+  --brand-surface: #ffffff;
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary: #64b2bc;
+  --bs-primary-rgb: 100, 178, 188;
+  --bs-link-color: #7fc4cd;
+  --bs-link-hover-color: #a3d6dc;
+  --bs-body-bg: #0f172a;
+  --bs-secondary-bg: #141c33;
+  --bs-tertiary-bg: #1c2744;
+  --bs-border-color: #2a3654;
+  --brand-accent: #64b2bc;
+  --brand-accent-soft: #16323a;
+  --brand-surface: #141c33;
+}
+
+body {
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--brand-accent);
+  --bs-btn-hover-border-color: var(--brand-accent);
+}
+
+/* Logo */
+.brand-logo { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+.brand-logo svg { width: 26px; height: 21px; }
+.brand-logo .logo-bar-1 { fill: var(--bs-primary); opacity: 0.7; }
+.brand-logo .logo-bar-2 { fill: var(--bs-primary); }
+
+/* Product cards */
+.product-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  background: var(--brand-surface);
+}
+.product-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.08); }
+.product-card img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; background: var(--bs-tertiary-bg); }
+.product-card .price { font-weight: 700; color: var(--bs-primary); }
+.product-card .stock-badge.low { color: #c0392b; }
+
+/* Category tiles on home */
+.category-tile {
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  background: var(--brand-accent-soft);
+  border: 1px solid var(--bs-border-color);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 150ms ease;
+}
+.category-tile:hover { transform: translateY(-2px); color: inherit; }
+.category-tile .cat-name { font-weight: 600; font-size: 14px; margin-top: 8px; }
+
+/* Cart badge */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  font-size: 10px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bs-primary);
+  color: #fff;
+}
+.cart-icon-wrap { position: relative; display: inline-block; }
+
+/* Empty states */
+.empty-state { text-align: center; padding: 60px 20px; color: var(--bs-secondary-color); }
+
+/* Theme toggle */
+.theme-toggle-btn { border: 1px solid var(--bs-border-color); background: transparent; color: inherit; }
+
+/* Quantity stepper */
+.qty-stepper { display: inline-flex; align-items: center; border: 1px solid var(--bs-border-color); border-radius: 8px; overflow: hidden; }
+.qty-stepper button { border: none; background: var(--bs-tertiary-bg); width: 32px; height: 32px; cursor: pointer; color: inherit; }
+.qty-stepper input { width: 46px; text-align: center; border: none; background: transparent; color: inherit; }
+.qty-stepper input:focus { outline: none; }
+
+.placeholder-thumb {
+  aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;
+  background: var(--bs-tertiary-bg); color: var(--bs-secondary-color); font-size: 12px;
+}
+
+/* Dashboard seasonal chart */
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 220px;
+  padding: 24px 2px 0;
+}
+.chart-bar {
+  flex: 1;
+  min-height: 3px;
+  background: var(--bs-primary);
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  transition: height 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.chart-bar.is-peak { background: #f2b263; }
+.chart-bar .bar-value {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: var(--bs-secondary-color);
+  white-space: nowrap;
+}
+.chart-labels { display: flex; gap: 6px; padding: 8px 2px 0; }
+.chart-labels span { flex: 1; text-align: center; font-size: 10.5px; color: var(--bs-secondary-color); }

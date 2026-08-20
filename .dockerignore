@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+venv/
+myenv/
+.venv/
+.env
+tests/
+.pytest_cache/
+.git/
+README.md
+supershop.db
+test_supershop.db

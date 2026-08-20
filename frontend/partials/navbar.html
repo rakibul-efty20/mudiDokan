@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg sticky-top border-bottom" style="background: var(--brand-surface);">
+  <div class="container">
+    <a class="navbar-brand brand-logo" href="index.html">
+      <svg viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="4" y="18" width="6" height="10" rx="1.5" class="logo-bar-1"></rect>
+        <rect x="13" y="10" width="6" height="18" rx="1.5" class="logo-bar-2"></rect>
+        <rect x="22" y="14" width="6" height="14" rx="1.5" class="logo-bar-1"></rect>
+        <rect x="31" y="4" width="6" height="24" rx="1.5" class="logo-bar-2"></rect>
+      </svg>
+      DokanCast Mart
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="categoryNavList">
+        <li class="nav-item"><a class="nav-link" href="products.html">All products</a></li>
+        <li class="nav-item d-none" id="dashboardNavItem"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item d-none" id="adminNavItem"><a class="nav-link" href="admin.html">Admin</a></li>
+        <!-- category links injected here by navbar.js -->
+      </ul>
+
+      <form class="d-flex me-3" role="search" id="navSearchForm">
+        <input class="form-control form-control-sm" type="search" placeholder="Search products…" id="navSearchInput" style="min-width:180px;">
+      </form>
+
+      <ul class="navbar-nav align-items-lg-center gap-2">
+        <li class="nav-item">
+          <button class="btn btn-sm theme-toggle-btn rounded-circle" id="themeToggleBtn" title="Toggle theme" style="width:34px;height:34px;">
+            <span id="themeIcon">🌙</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link cart-icon-wrap" href="cart.html" title="Cart">
+            🛒
+            <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown" id="authAreaLoggedOut">
+          <a class="btn btn-sm btn-outline-primary" href="login.html">Log in</a>
+        </li>
+        <li class="nav-item dropdown d-none" id="authAreaLoggedIn">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <span id="navUserEmail"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><span class="dropdown-item-text small text-secondary" id="navUserRole"></span></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" id="navLogoutBtn">Log out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
