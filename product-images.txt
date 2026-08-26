@@ -191,3 +191,16 @@ snack-products.jpg  (snack products)
 specialty-bar.jpg  (specialty bar)
 specialty-chocolate.jpg  (specialty chocolate)
 tidbits.jpg  (tidbits)
+
+frontend/images/carousel/
+category-banner-bakery.jpg
+category-banner-beverages.jpg
+category-banner-dairy-eggs.jpg
+category-banner-fruits-vegetables.jpg
+category-banner-household-cleaning.jpg
+category-banner-meat-seafood.jpg
+category-banner-other.jpg
+category-banner-pantry-cooking-essentials.jpg
+category-banner-personal-care.jpg
+category-banner-pet-garden.jpg
+category-banner-snacks-confectionery.jpg

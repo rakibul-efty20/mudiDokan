@@ -5,7 +5,7 @@ const CATEGORY_ICONS = {
   "Meat & Seafood": "🍗",
   "Beverages": "🥤",
   "Snacks & Confectionery": "🍫",
-  "Pantry & Cooking Essentials": "🧂",
+  "Pantry & Cooking": "🧂",
   "Household & Cleaning": "🧹",
   "Personal Care": "🧴",
   "Pet & Garden": "🌱",
@@ -17,6 +17,7 @@ function productCardHtml(product) {
     <div class="col-6 col-md-4 col-lg-3">
       <a href="product.html?id=${product.id}" class="text-decoration-none text-reset">
         <div class="product-card">
+          ${offBadgeHtml(product)}
           ${productImgTag(product)}
           <div class="p-3">
             <div class="small text-truncate">${escapeHtml(product.name)}</div>

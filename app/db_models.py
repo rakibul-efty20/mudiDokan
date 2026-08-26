@@ -48,6 +48,7 @@ class Product(Base):
     name = Column(String, unique=True, nullable=False)
     category_id = Column(Integer, ForeignKey("categories.id"), nullable=False)
     price = Column(Float, nullable=False)  # Tk, placeholder demo pricing — see seed.py
+    original_price = Column(Float, nullable=True)  # set only when the item is "on sale"; null = no discount
     stock = Column(Integer, default=100, nullable=False)
     image_filename = Column(String, nullable=False)
     description = Column(Text, default="")

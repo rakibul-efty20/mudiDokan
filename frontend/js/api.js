@@ -67,3 +67,9 @@ function productImgTag(product) {
   return `<img src="images/products/${product.image_filename}" alt="${escapeHtml(product.name)}"
             onerror="this.replaceWith(Object.assign(document.createElement('div'), {className:'placeholder-thumb', textContent:'${escapeHtml(product.name)}'}))">`;
 }
+
+function offBadgeHtml(product) {
+  if (!product.original_price || product.original_price <= product.price) return "";
+  const off = Math.round(product.original_price - product.price);
+  return `<span class="off-badge">Tk ${off} OFF</span>`;
+}

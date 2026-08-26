@@ -47,6 +47,7 @@ class ProductOut(BaseModel):
     name: str
     category_id: int
     price: float
+    original_price: Optional[float] = None
     stock: int
     image_filename: str
     description: str
@@ -55,6 +56,7 @@ class ProductOut(BaseModel):
 
 class ProductUpdate(BaseModel):
     price: Optional[float] = Field(None, gt=0)
+    original_price: Optional[float] = Field(None, gt=0)
     stock: Optional[int] = Field(None, ge=0)
     description: Optional[str] = None
 

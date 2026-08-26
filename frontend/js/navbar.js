@@ -10,6 +10,15 @@ async function loadNavbar() {
   wireSearch();
   updateCartBadge();
   await loadCategoryLinks();
+  fixBodyPaddingForFixedNavbar();
+}
+
+function fixBodyPaddingForFixedNavbar() {
+  const nav = document.querySelector(".site-navbar-fixed");
+  if (!nav) return;
+  const apply = () => { document.body.style.paddingTop = `${nav.offsetHeight}px`; };
+  apply();
+  window.addEventListener("resize", apply);
 }
 
 function wireThemeToggle() {

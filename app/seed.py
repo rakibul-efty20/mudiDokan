@@ -66,10 +66,14 @@ def run():
             lo, hi = PRICE_RANGES[cat_name]
             for item in items:
                 price = round(rng.uniform(lo, hi) / 5) * 5
+                original_price = None
+                if rng.random() < 0.15:  # ~15% of products show an OFF badge
+                    original_price = round(price * rng.uniform(1.15, 1.35) / 5) * 5
                 db.add(Product(
                     name=item,
                     category_id=category_rows[cat_name].id,
                     price=float(price),
+                    original_price=float(original_price) if original_price else None,
                     stock=rng.randint(20, 200),
                     image_filename=f"{slugify(item)}.jpg",
                     description=f"{item} — {cat_name}",

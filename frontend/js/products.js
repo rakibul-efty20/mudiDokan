@@ -11,6 +11,7 @@ function productCardWithAddButton(product) {
   return `
     <div class="col-6 col-md-4 col-lg-3">
       <div class="product-card">
+        ${offBadgeHtml(product)}
         <a href="product.html?id=${product.id}" class="text-decoration-none text-reset">
           ${productImgTag(product)}
         </a>
@@ -18,14 +19,38 @@ function productCardWithAddButton(product) {
           <a href="product.html?id=${product.id}" class="text-decoration-none text-reset">
             <div class="small text-truncate">${escapeHtml(product.name)}</div>
           </a>
-          <div class="d-flex justify-content-between align-items-center mt-1">
+          <div class="mb-2">
+            ${product.original_price && product.original_price > product.price
+              ? `<span class="original-price">Tk ${product.original_price.toFixed(0)}</span>` : ""}
             <span class="price">Tk ${product.price.toFixed(0)}</span>
-            <button class="btn btn-sm btn-primary" data-add-id="${product.id}">Add</button>
           </div>
+          <button class="add-to-bag-btn" data-add-id="${product.id}">+ Add to Bag</button>
           ${product.stock < 10 ? `<div class="small stock-badge low mt-1">Only ${product.stock} left</div>` : ""}
         </div>
       </div>
     </div>`;
+}
+
+function showCategoryBanner(category) {
+  const wrap = document.getElementById("categoryBannerWrap");
+  const img = document.getElementById("categoryBannerImg");
+  const placeholder = document.getElementById("categoryBannerPlaceholder");
+  const filename = `category-banner-${category.slug}.png`;
+
+  placeholder.textContent = filename;
+  placeholder.style.display = "none";
+  img.style.display = "block";
+  img.alt = `${category.name} banner`;
+  img.onerror = () => {
+    img.style.display = "none";
+    placeholder.style.display = "flex";
+  };
+  img.src = `images/carousel/${filename}`;
+  wrap.classList.remove("d-none");
+}
+
+function hideCategoryBanner() {
+  document.getElementById("categoryBannerWrap").classList.add("d-none");
 }
 
 async function loadProducts() {
@@ -47,7 +72,9 @@ async function loadProducts() {
       titleEl.textContent = label;
       crumbEl.textContent = label;
       document.title = `${label} — DokanCast Mart`;
+      if (cat) showCategoryBanner(cat);
     } else {
+      hideCategoryBanner();
       products = await apiFetch("/products");
       if (search) {
         const q = search.toLowerCase();
