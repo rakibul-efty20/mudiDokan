@@ -8,25 +8,25 @@ A full-stack e-commerce grocery platform combining a customer storefront, role-b
 
 | Home | Home |
 |---|---|
-| ![Home](images/screenshots/ss1.png) | ![Home](images/screenshots/ss2.png) |
+| ![Home](./frontend/images/screenshots/ss1.png) | ![Home](./frontend/images/screenshots/ss2.png) |
 
 | Category browsing (Bakery) |
 |---|
-| ![Category page](images/screenshots/ss3.png) |
+| ![Category page](./frontend/images/screenshots/ss3.png) |
 
 | Cart | Checkout | Promo code & discount |
 |---|---|---|
-| ![Cart](images/screenshots/ss4.png) | ![Checkout](images/screenshots/ss5.png) | ![Discount applied](images/screenshots/ss6.png) |
+| ![Cart](./frontend/images/screenshots/ss4.png) | ![Checkout](./frontend/images/screenshots/ss5.png) | ![Discount applied](./frontend/images/screenshots/ss6.png) |
 
 **Shopkeeper & Admin**
 
 | Sales dashboard & seasonal forecast |
 |---|
-| ![Dashboard](images/screenshots/ss7.png) |
+| ![Dashboard](./frontend/images/screenshots/ss7.png) |
 
 | Inventory management | Promo code management | Role management |
 |---|---|---|
-| ![Inventory](images/screenshots/ss8.png) | ![Promo codes](images/screenshots/ss9.png) | ![User roles](images/screenshots/ss10.png) |
+| ![Inventory](./frontend/images/screenshots/ss8.png) | ![Promo codes](./frontend/images/screenshots/ss9.png) | ![User roles](./frontend/images/screenshots/ss10.png) |
 
 ## Overview
 
